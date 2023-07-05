@@ -11,7 +11,13 @@ export default {
   methods: {
     fetchFilteredMovies(searchTerm) {
       axios.get(`${baseUri}/search/movie?api_key=${apiKey}&query=${searchTerm}`)
-        .then(res => this.movies = res.data.results)
+        .then(res => {
+          const movies = res.data.results
+          store.movies = movies.map((movie) => {
+            const { title, original_title, original_language, vote_average } = movie
+            return { title, originalTitle: original_title, language: original_language, vote: Math.ceil(vote_average) }
+          })
+        })
         .catch(err => console.error(err))
     }
   },

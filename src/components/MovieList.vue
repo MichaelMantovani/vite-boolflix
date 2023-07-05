@@ -1,18 +1,21 @@
 <script>
 import { store } from '../data/store'
+import MovieCard from './MovieCard.vue';
 export default {
   data() {
     return store
-  }
+  },
+  components: { MovieCard }
 }
 </script>
 
 
 
 <template>
-  <h2 class="text-center mt-5 mb-4">Movies List</h2>
-  <ul class="w-25 mx-auto mt-2">
-    <li v-for="movie in movies" :key="movie.id">{{ movie.title }}</li>
+  <ul class="w-25 mx-auto mt-5">
+    <li class="my-5" v-for="movie in   movies  " :key="movie.id">{{ movie.title }}:
+      <MovieCard :movie="movie" />
+    </li>
   </ul>
 </template>
 
