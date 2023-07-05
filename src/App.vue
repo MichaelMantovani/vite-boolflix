@@ -23,6 +23,7 @@ export default {
 
 <template>
   <AppHeader @submit-movie-search="fetchFilteredMovies" />
+  <AppMain />
 </template>
 
 
