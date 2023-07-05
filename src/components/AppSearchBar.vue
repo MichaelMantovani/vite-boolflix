@@ -6,21 +6,24 @@ export default {
     }
   },
   methods: {
-    onSubmitTerm() {
-      this.$emit('submit-search-term')
+    onSubmitTerm(searchTerm) {
+      if (this.searchTerm.length)
+        this.$emit('submit-search-term', searchTerm);
     }
-  }
+  },
+  emits: ['submit-search-term']
 }
 </script>
 
 
 
 <template>
-  <div class="input-group mb-3 w-25 mx-auto mt-2">
-    <input type="text" class="form-control" placeholder="Cerca..." aria-describedby="button-addon2" v-model="searchTerm"
-      @submit="onSubmitTerm">
-    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Cerca</button>
-  </div>
+  <form @submit.prevent="onSubmitTerm(searchTerm)">
+    <div class="mb-3 input-group w-25 mx-auto mt-3">
+      <input type="text" class="form-control rounded" placeholder="Cerca.." v-model.trim="searchTerm">
+      <button type="submit" class="btn btn-primary ms-2 rounded">Cerca</button>
+    </div>
+  </form>
 </template>
 
 

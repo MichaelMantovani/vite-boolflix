@@ -3,10 +3,11 @@ import AppSearchBar from './AppSearchBar.vue';
 export default {
   components: { AppSearchBar },
   methods: {
-    onSubmitTerm() {
-      this.$emit('submit-search-term')
+    onSubmitTerm(searchTerm) {
+      this.$emit('submit-movie-search', searchTerm)
     }
-  }
+  },
+  emits: ['submit-movie-search']
 }
 </script>
 
