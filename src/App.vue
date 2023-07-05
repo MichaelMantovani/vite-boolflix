@@ -15,7 +15,7 @@ export default {
           const movies = res.data.results
           store.movies = movies.map((movie) => {
             const { title, original_title, original_language, vote_average } = movie
-            return { title, originalTitle: original_title, language: original_language, vote: Math.ceil(vote_average) }
+            return { title, originalTitle: original_title, language: `${original_language}.png`, vote: Math.ceil(vote_average) }
           })
         })
         .catch(err => console.error(err))

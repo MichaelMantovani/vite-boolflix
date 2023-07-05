@@ -1,5 +1,10 @@
 <script>
 export default {
+  methods: {
+    getImagePath(img) {
+      return new URL(`../assets/img/${img}`, import.meta.url).href;
+    }
+  },
   props: {
     movie: Object
   }
@@ -8,10 +13,17 @@ export default {
 
 <template>
   <ul>
-    <li v-for="(info, key) in movie">{{ key }}: {{ info }}</li>
+    <li>{{ movie.title }}</li>
+    <li>{{ movie.originalTitle }}</li>
+    <li><img :src="getImagePath(movie.language)" src="../assets/img/" alt=""></li>
+    <li>{{ movie.vote }}</li>
   </ul>
 </template>
 
 
 
-<style></style>
+<style scoped>
+img {
+  width: 20px;
+}
+</style>
