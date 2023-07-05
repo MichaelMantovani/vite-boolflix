@@ -15,7 +15,7 @@ export default {
   <ul>
     <li>{{ movie.title }}</li>
     <li>{{ movie.originalTitle }}</li>
-    <li><img :src="getImagePath(movie.language)" src="../assets/img/" alt=""></li>
+    <li class="w-25"><img class="img-fluid" :src="getImagePath(movie.language)" src="../assets/img/" alt=""></li>
     <li>{{ movie.vote }}</li>
   </ul>
 </template>
@@ -23,7 +23,7 @@ export default {
 
 
 <style scoped>
-img {
-  width: 20px;
+li {
+  margin: 10px 0;
 }
 </style>
