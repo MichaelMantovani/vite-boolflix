@@ -45,7 +45,7 @@ export default {
     </li>
     <!-- Media dei voti -->
     <li>
-      <span v-for="star in this.item.vote" :key="vote">{{ item.vote }}</span>
+      <span v-for="star in this.item.vote" :key="vote"><font-awesome-icon :icon="['fas', 'star']" /></span>
     </li>
   </ul>
 </template>
