@@ -1,6 +1,10 @@
 <script>
+// Import dei dati
 import { store } from '../data/store';
+
+// Import dei componenti
 import ProductionCard from './ProductionCard.vue';
+
 export default {
   data() {
     return store
@@ -12,10 +16,13 @@ export default {
 
 
 <template>
+  <!-- Lista dei film  -->
   <div v-if="movies.length">
     <h2>Movies</h2>
     <ProductionCard :item="movie" v-for="movie in movies" />
   </div>
+
+  <!-- Lista delle serie TV -->
   <div v-if="series.length">
     <h2>TV Series</h2>
     <ProductionCard :item="serie" v-for="serie in series" />
