@@ -18,9 +18,13 @@ export default {
     }
   },
   methods: {
-    // Funzione che creao un url della locandina del film, se questa esiste 
-    renderImage(target) {
+    // Funzione che crea un url della locandina del film, se questa esiste 
+    setImage(target) {
       return target ? `${baseUri.poster}${target}` : 'No image available'
+    },
+
+    setVote(vote) {
+      return Math.ceil(vote / 2)
     },
 
     // Funzione di chiamata API sia per la lista dei film filtrati che per le serie TV 
@@ -36,10 +40,10 @@ export default {
             const { title, name, original_name, original_title, original_language, vote_average, poster_path } = production
             return {
               title: title || name,
-              image: this.renderImage(poster_path),
+              image: this.setImage(poster_path),
               originalTitle: original_title || original_name,
               language: original_language,
-              vote: Math.ceil(vote_average)
+              vote: this.setVote(vote_average)
             }
           })
         })

@@ -44,7 +44,9 @@ export default {
       <span v-else>{{ item.language }}</span>
     </li>
     <!-- Media dei voti -->
-    <li>{{ item.vote }}</li>
+    <li>
+      <span v-for="star in this.item.vote" :key="vote">{{ item.vote }}</span>
+    </li>
   </ul>
 </template>
 
