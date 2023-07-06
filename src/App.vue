@@ -9,7 +9,7 @@ export default {
     return store
   },
   methods: {
-    fetchFilteredMovies(searchTerm) {
+    fetchFilteredProductions(searchTerm) {
       axios.get(`${baseUri}/search/movie?api_key=${apiKey}&query=${searchTerm}`)
         .then(res => {
           const movies = res.data.results
@@ -28,7 +28,7 @@ export default {
 
 
 <template>
-  <AppHeader @submit-movie-search="fetchFilteredMovies" />
+  <AppHeader @submit-movie-search="fetchFilteredProductions" />
   <AppMain />
 </template>
 
