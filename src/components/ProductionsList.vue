@@ -1,11 +1,11 @@
 <script>
-import { store } from '../data/store'
+import { store } from '../data/store';
 import ProductionCard from './ProductionCard.vue';
 export default {
   data() {
     return store
   },
-  components: { ProductionCard }
+  components: { ProductionCard },
 }
 </script>
 

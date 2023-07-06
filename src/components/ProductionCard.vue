@@ -1,28 +1,32 @@
 <script>
 import { languageAvailable } from '../data/index'
 export default {
-  data() {
-    return { languageAvailable }
-  },
-
   methods: {
     getImagePath(img) {
       return new URL(`../assets/img/${img}.png`, import.meta.url).href;
-    }
+    },
   },
   computed: {
     hasIcon() {
-      return this.languageAvailable.includes(this.item.language)
+      return languageAvailable.includes(this.item.language)
+    },
+    hasPoster() {
+      return this.item.image !== 'No image available'
     }
   },
   props: {
-    item: Object
-  }
+    item: Object,
+  },
+
 }
 </script>
 
 <template>
   <ul class="w-25 mx-auto my-5">
+    <li>
+      <img v-if="hasPoster" :src="item.image" :alt="item.title">
+      <span v-else>{{ item.image }}</span>
+    </li>
     <li>{{ item.title }}</li>
     <li>{{ item.originalTitle }}</li>
     <li class="w-25">
