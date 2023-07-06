@@ -12,24 +12,24 @@ export default {
   },
   computed: {
     hasIcon() {
-      return this.languageAvailable.includes(this.movie.language)
+      return this.languageAvailable.includes(this.item.language)
     }
   },
   props: {
-    movie: Object
+    item: Object
   }
 }
 </script>
 
 <template>
   <ul class="w-25 mx-auto my-5">
-    <li>{{ movie.title }}</li>
-    <li>{{ movie.originalTitle }}</li>
+    <li>{{ item.title }}</li>
+    <li>{{ item.originalTitle }}</li>
     <li class="w-25">
-      <img v-if="hasIcon" class="img-fluid" :src="getImagePath(movie.language)" :alt="movie.language">
-      <span v-else>{{ movie.language }}</span>
+      <img v-if="hasIcon" class="img-fluid" :src="getImagePath(item.language)" :alt="item.language">
+      <span v-else>{{ item.language }}</span>
     </li>
-    <li>{{ movie.vote }}</li>
+    <li>{{ item.vote }}</li>
   </ul>
 </template>
 

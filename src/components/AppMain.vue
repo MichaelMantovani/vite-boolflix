@@ -1,14 +1,14 @@
 <script>
-import MovieList from './MovieList.vue';
+import ProductionsList from './ProductionsList.vue';
 export default {
-  components: { MovieList }
+  components: { ProductionsList }
 }
 </script>
 
 
 
 <template>
-  <MovieList />
+  <ProductionsList />
 </template>
 
 

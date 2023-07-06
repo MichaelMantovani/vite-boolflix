@@ -1,9 +1,9 @@
 <script>
+import { store } from '../data/store'
 export default {
   data() {
-    return {
-      searchTerm: ''
-    }
+    return store
+
   },
   methods: {
     onSubmitTerm(searchTerm) {

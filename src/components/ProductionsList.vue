@@ -1,18 +1,19 @@
 <script>
 import { store } from '../data/store'
-import MovieCard from './MovieCard.vue';
+import ProductionCard from './ProductionCard.vue';
 export default {
   data() {
     return store
   },
-  components: { MovieCard }
+  components: { ProductionCard }
 }
 </script>
 
 
 
 <template>
-  <MovieCard v-if="movies.length" :movie="movie" v-for="movie in movies" />
+  <ProductionCard v-if="movies.length" :item="movie" v-for="movie in movies" />
+  <ProductionCard v-if="series.length" :item="serie" v-for="serie in series" />
 </template>
 
 
