@@ -20,17 +20,6 @@ export default {
         })
         .catch(err => console.error(err))
     },
-    fetchFilteredTvSeries(searchTerm) {
-      axios.get(`${baseUri}/search/tv?api_key=${apiKey}&query=${searchTerm}`)
-        .then(res => {
-          const series = res.data.results
-          store.series = series.map((series) => {
-            const { name, original_name, original_language, vote_average } = series
-            return { title: name, originalTitle: original_name, language: `${original_language}.png`, vote: Math.ceil(vote_average) }
-          })
-        })
-        .catch(err => console.error(err))
-    }
   },
   components: { AppHeader, AppMain },
 }
@@ -39,7 +28,7 @@ export default {
 
 
 <template>
-  <AppHeader @submit-movie-search="fetchFilteredMovies, fetchFilteredTvSeries" />
+  <AppHeader @submit-movie-search="fetchFilteredMovies" />
   <AppMain />
 </template>
 
