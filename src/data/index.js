@@ -7,8 +7,9 @@ const endpoint = {
   movies: 'search/movie',
   series: 'search/tv'
 };
-const languageAvailable = ['en', 'it']
+const languageAvailable = ['en', 'it'];
+const voteMax = 5 
 
 
 
-export {baseUri, apiKey, languageAvailable, endpoint}
+export {baseUri, apiKey, languageAvailable, endpoint, voteMax}

@@ -1,6 +1,7 @@
 <script>
 // Import dei dati
 import { languageAvailable } from '../data/index'
+import { voteMax } from '../data/index';
 
 export default {
   methods: {
@@ -8,6 +9,9 @@ export default {
     getImagePath(img) {
       return new URL(`../assets/img/${img}.png`, import.meta.url).href;
     },
+    setStarvote(n) {
+      return n > this.item.vote ? 'far' : 'fas'
+    }
   },
   computed: {
     // Funzione che controlla se esiste un immagine relativa alla lingua della produzione 
@@ -45,7 +49,7 @@ export default {
     </li>
     <!-- Media dei voti -->
     <li>
-      <span v-for="star in this.item.vote" :key="vote"><font-awesome-icon :icon="['fas', 'star']" /></span>
+      <font-awesome-icon :icon="[setStarvote(n), 'star']" v-for="n in 5" />
     </li>
   </ul>
 </template>
