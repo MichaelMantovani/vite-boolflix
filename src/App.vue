@@ -31,7 +31,7 @@ export default {
     fetchFilteredProductions(endpoint, target) {
 
       // Effettuo la chiamata API
-      axios.get(`${baseUri.production}/${endpoint}?api_key=${apiKey}&query=${this.store.searchTerm}`)
+      axios.get(`${baseUri.production}/${endpoint}?api_key=${apiKey}&query=${this.store.filterTitle}`)
         .then(res => {
           const productions = res.data.results;
 
@@ -58,7 +58,7 @@ export default {
 
 <template>
   <AppHeader
-    @submit-movie-search="fetchFilteredProductions(endpoint.movies, 'movies'); fetchFilteredProductions(endpoint.series, 'series');" />
+    @submit-filter="fetchFilteredProductions(endpoint.movies, 'movies'); fetchFilteredProductions(endpoint.series, 'series');" />
   <AppMain />
 </template>
 

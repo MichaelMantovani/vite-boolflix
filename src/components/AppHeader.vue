@@ -1,21 +1,21 @@
 <script>
-import AppSearchBar from './AppSearchBar.vue';
+import { store } from '../data/store'
+import SearchBar from './SearchBar.vue';
 export default {
-  components: { AppSearchBar },
+  components: { SearchBar },
+  emits: ['submit-filter'],
   methods: {
-    onSubmitTerm(searchTerm) {
-      this.$emit('submit-movie-search', searchTerm)
+    setSearchFilter(searchTerm) {
+      store.filterTitle = searchTerm
     }
   },
-  emits: ['submit-movie-search']
 }
 </script>
 
 
 
-
 <template>
-  <AppSearchBar @submit-search-term="onSubmitTerm" />
+  <SearchBar @submit-search="$emit('submit-filter')" @change-term="setSearchFilter" />
 </template>
 
 
