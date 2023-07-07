@@ -34,6 +34,10 @@ export default {
 
 header {
   height: 100px;
+  background-color: $primary-color;
+  position: sticky;
+  top: 0;
+  right: 0;
 }
 
 #logo {

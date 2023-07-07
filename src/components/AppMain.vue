@@ -8,10 +8,17 @@ export default {
 
 
 <template>
-  <ProductionsList />
+  <main>
+    <ProductionsList />
+  </main>
 </template>
 
 
 
 
-<style></style>
+<style scoped lang="scss">
+main {
+  height: calc(100% - 100px);
+  overflow: auto;
+}
+</style>

@@ -33,7 +33,7 @@ export default {
 @use '../assets/scss/vars' as *;
 
 input {
-  background-color: $bg-header;
+  background-color: $primary-color;
 }
 
 ::placeholder {
