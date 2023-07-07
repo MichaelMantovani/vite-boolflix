@@ -59,12 +59,16 @@ export default {
 <template>
   <AppHeader
     @submit-filter="fetchFilteredProductions(endpoint.movies, 'movies'); fetchFilteredProductions(endpoint.series, 'series');" />
-  <AppMain />
+  <main>
+    <AppMain />
+  </main>
 </template>
 
 
 
 
-<style></style>
+<style lang="scss">
+@use './assets/scss/style.scss'
+</style>
 
 

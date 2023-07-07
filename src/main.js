@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import '@fontsource/bebas-neue';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons'

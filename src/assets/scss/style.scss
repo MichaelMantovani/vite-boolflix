@@ -1,0 +1,19 @@
+@use './vars' as *;
+
+// GENERALS
+body {
+  font-family: 'Bebas Neue', sans-serif;
+  background-color: $bg-header;
+}
+
+input{
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: white;
+  border:1px solid white;
+
+}

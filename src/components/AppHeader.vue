@@ -15,11 +15,32 @@ export default {
 
 
 <template>
-  <SearchBar @submit-search="$emit('submit-filter')" @change-term="setSearchFilter" />
+  <header>
+    <div class="container h-100 d-flex align-items-center justify-content-between">
+      <div id="logo" class="text-danger">Bollfix</div>
+      <div>
+        <SearchBar id="search-bar" @submit-search="$emit('submit-filter')" @change-term="setSearchFilter" />
+      </div>
+    </div>
+  </header>
 </template>
 
 
 
 
 
-<style></style>
+<style scoped lang="scss">
+@use '../assets/scss/vars' as *;
+
+header {
+  height: 100px;
+}
+
+#logo {
+  font-size: 4rem;
+}
+
+#search-bar {
+  width: 250px;
+}
+</style>
