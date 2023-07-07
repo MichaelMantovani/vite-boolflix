@@ -32,31 +32,34 @@ export default {
 </script>
 
 <template>
-  <ul class="w-25 mx-auto my-5">
-    <!-- Locandina  -->
-    <li>
-      <img v-if="hasPoster" :src="item.image" :alt="item.title">
+  <div class="card">
+    <div id="poster">
+      <img class="img-fluid" v-if="hasPoster" :src="item.image" :alt="item.title">
       <span v-else>{{ item.image }}</span>
-    </li>
-    <!-- Titolo -->
-    <li>{{ item.title }}</li>
-    <!-- Titolo origibale -->
-    <li>{{ item.originalTitle }}</li>
-    <!-- Lingua  -->
-    <li class="w-25">
-      <img v-if="hasIcon" class="img-fluid" :src="getImagePath(item.language)" :alt="item.language">
-      <span v-else>{{ item.language }}</span>
-    </li>
-    <!-- Media dei voti -->
-    <li>
-      <font-awesome-icon :icon="[setStarvote(n), 'star']" v-for="n in 5" />
-    </li>
-  </ul>
+    </div>
+    <div class="card-info d-none">
+      <ul>
+        <li>{{ item.title }}</li>
+        <li>{{ item.originalTitle }}</li>
+        <li class="w-25">
+          <img v-if="hasIcon" class="img-fluid" :src="getImagePath(item.language)" :alt="item.language">
+          <span v-else>{{ item.language }}</span>
+        </li>
+        <li>
+          <font-awesome-icon :icon="[setStarvote(n), 'star']" v-for="n in 5" />
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 
 
-<style scoped>
+<style scoped lang="scss">
+#poster {
+  width: 100%;
+}
+
 li {
   margin: 10px 0;
 }
