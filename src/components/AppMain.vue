@@ -8,7 +8,7 @@ export default {
 
 
 <template>
-  <main>
+  <main class="container">
     <ProductionsList />
   </main>
 </template>

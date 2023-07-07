@@ -17,15 +17,19 @@ export default {
 
 <template>
   <!-- Lista dei film  -->
-  <div v-if="movies.length">
+  <div id="movie-list" v-if="movies.length">
     <h2>Movies</h2>
-    <ProductionCard :item="movie" v-for="movie in movies" />
+    <div class="row row-cols-4">
+      <ProductionCard :item="movie" v-for="movie in movies" />
+    </div>
   </div>
 
   <!-- Lista delle serie TV -->
   <div v-if="series.length">
     <h2>TV Series</h2>
-    <ProductionCard :item="serie" v-for="serie in series" />
+    <div class="row row-cols-4">
+      <ProductionCard :item="serie" v-for="serie in series" />
+    </div>
   </div>
 </template>
 
@@ -35,7 +39,7 @@ export default {
 <style scoped>
 h2 {
   text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 10rem;
+  margin-bottom: 2.5rem;
 }
 </style>

@@ -32,23 +32,25 @@ export default {
 </script>
 
 <template>
-  <div class="card">
-    <div id="poster">
-      <img class="img-fluid" v-if="hasPoster" :src="item.image" :alt="item.title">
-      <span v-else>{{ item.image }}</span>
-    </div>
-    <div class="card-info d-none">
-      <ul>
-        <li>{{ item.title }}</li>
-        <li>{{ item.originalTitle }}</li>
-        <li class="w-25">
-          <img v-if="hasIcon" class="img-fluid" :src="getImagePath(item.language)" :alt="item.language">
-          <span v-else>{{ item.language }}</span>
-        </li>
-        <li>
-          <font-awesome-icon :icon="[setStarvote(n), 'star']" v-for="n in 5" />
-        </li>
-      </ul>
+  <div class="col py-4">
+    <div class="card border-0 bg-transparent">
+      <div id="poster">
+        <img class="img-fluid rounded d-block" v-if="hasPoster" :src="item.image" :alt="item.title">
+        <span v-else>{{ item.image }}</span>
+      </div>
+      <div class="card-info d-none">
+        <ul>
+          <li>{{ item.title }}</li>
+          <li>{{ item.originalTitle }}</li>
+          <li class="w-25">
+            <img v-if="hasIcon" class="img-fluid" :src="getImagePath(item.language)" :alt="item.language">
+            <span v-else>{{ item.language }}</span>
+          </li>
+          <li>
+            <font-awesome-icon :icon="[setStarvote(n), 'star']" v-for="n in 5" />
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -59,6 +61,8 @@ export default {
 #poster {
   width: 100%;
 }
+
+
 
 li {
   margin: 10px 0;
