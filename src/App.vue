@@ -20,7 +20,7 @@ export default {
   methods: {
     // Funzione che crea un url della locandina del film, se questa esiste 
     setImage(target) {
-      return target ? `${baseUri.poster}${target}` : 'No image available'
+      return target ? `${baseUri.poster}${target}` : 'https://www.freeiconspng.com/uploads/no-image-icon-6.png'
     },
 
     setVote(vote) {
