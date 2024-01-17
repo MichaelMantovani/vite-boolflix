@@ -1,33 +1,27 @@
 <script>
-import { store } from '../data/store'
+import { store } from '../data/store';
 import SearchBar from './SearchBar.vue';
 export default {
   components: { SearchBar },
   emits: ['submit-filter'],
   methods: {
     setSearchFilter(searchTerm) {
-      store.filterTitle = searchTerm
-    }
+      store.filterTitle = searchTerm;
+    },
   },
-}
+};
 </script>
-
-
 
 <template>
   <header>
     <div class="container h-100 d-flex align-items-center justify-content-between">
-      <div id="logo" class="text-danger">Bollfix</div>
+      <div id="logo" class="text-danger">Boolfix</div>
       <div>
         <SearchBar id="search-bar" @submit-search="$emit('submit-filter')" @change-term="setSearchFilter" />
       </div>
     </div>
   </header>
 </template>
-
-
-
-
 
 <style scoped lang="scss">
 @use '../assets/scss/vars' as *;
